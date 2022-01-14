@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "freelancers",
+  "info": {
+    "singularName": "freelancer",
+    "pluralName": "freelancers",
+    "displayName": "Freelancer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "imageUrl": {
+      "type": "string"
+    },
+    "availableFrom": {
+      "type": "datetime"
+    },
+    "hourlyRate": {
+      "type": "decimal"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phoneNumber": {
+      "type": "biginteger"
+    },
+    "placeOfResidence": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "text"
+    },
+    "freelancerCheckedOut": {
+      "type": "boolean"
+    },
+    "tasks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::task.task",
+      "mappedBy": "freelancer"
+    },
+    "focus": {
+      "type": "string"
+    }
+  }
+}

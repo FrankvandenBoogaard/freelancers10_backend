@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "task",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "taskName": {
+      "type": "string"
+    },
+    "taskStart": {
+      "type": "datetime"
+    },
+    "taskFinish": {
+      "type": "datetime"
+    },
+    "taskPurchase": {
+      "type": "decimal"
+    },
+    "taskSale": {
+      "type": "decimal"
+    },
+    "taskDescription": {
+      "type": "text"
+    },
+    "taskCheckedOut": {
+      "type": "boolean"
+    },
+    "freelancer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::freelancer.freelancer",
+      "inversedBy": "tasks"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "tasks"
+    }
+  }
+}

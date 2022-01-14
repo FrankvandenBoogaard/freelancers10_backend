@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "projectName": {
+      "type": "string"
+    },
+    "projectStart": {
+      "type": "datetime"
+    },
+    "projectFinish": {
+      "type": "datetime"
+    },
+    "projectPurchase": {
+      "type": "decimal"
+    },
+    "projectSale": {
+      "type": "decimal"
+    },
+    "projectDescription": {
+      "type": "text"
+    },
+    "projectCheckedOut": {
+      "type": "boolean"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::customer.customer",
+      "inversedBy": "projects"
+    },
+    "tasks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::task.task",
+      "mappedBy": "project"
+    }
+  }
+}
